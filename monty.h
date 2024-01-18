@@ -48,6 +48,7 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void cleanup(stack_t **stack, FILE *file);
+void nop(stack_t **stack, unsigned int line_number);
 void exec(stack_t **stack, char *opcode, unsigned int line_number, FILE *file);
 #endif /* MONTY_H */
 
