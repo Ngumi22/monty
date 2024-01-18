@@ -43,6 +43,10 @@ void exec(stack_t **stack, char *opcode, unsigned int line_number, FILE *file)
 	{
 		add(stack, line_number);
 	}
+	else if (strcmp(opcode, "nop") == 0)
+        {
+                nop(stack, line_number);
+        }
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
