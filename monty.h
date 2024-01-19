@@ -50,5 +50,7 @@ void add(stack_t **stack, unsigned int line_number);
 void cleanup(stack_t **stack, FILE *file);
 void nop(stack_t **stack, unsigned int line_number);
 void exec(stack_t **stack, char *opcode, unsigned int line_number, FILE *file);
+void sub(stack_t **stack, unsigned int line_number);
+void div_op(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
 

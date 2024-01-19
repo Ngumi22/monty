@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
 * exec - Executes the corresponding operation based on opcode
 * @stack: Pointer to the stack
@@ -20,8 +19,7 @@ void exec(stack_t **stack, char *opcode, unsigned int line_number, FILE *file)
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			cleanup(stack, file);
 			exit(EXIT_FAILURE);
-		}
-		push(stack, value);
+		} push(stack, value);
 	} else if (strcmp(opcode, "pall") == 0)
 	{
 		pall(stack, line_number);
@@ -40,6 +38,12 @@ void exec(stack_t **stack, char *opcode, unsigned int line_number, FILE *file)
 	} else if (strcmp(opcode, "nop") == 0)
 	{
 		nop(stack, line_number);
+	} else if (strcmp(opcode, "sub") == 0)
+	{
+		sub(stack, line_number);
+	} else if (strcmp(opcode, "div_op") == 0)
+	{
+		div_op(stack, line_number);
 	} else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
